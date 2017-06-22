@@ -2,13 +2,81 @@ group 'finance-overview'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'idea'
 
 sourceCompatibility = 1.8
 
-repositories {
-    mavenCentral()
+dependencies {
+
+
+    repositories {
+        mavenCentral()
+    }
 }
 
+
 dependencies {
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile "org.springframework:spring-context:$springVersion"
+    compile "org.springframework:spring-webmvc:$springVersion"
+    compile "org.springframework:spring-test:$springVersion"
+    compile "org.springframework:spring-orm:$springVersion"
+    compile "org.springframework:spring-tx:$springVersion"
+    compile "org.springframework.data:spring-data-jpa:$springDataJpaVersion"
+
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-jms
+    compile group: 'org.springframework', name: 'spring-jms', version: '4.3.8.RELEASE'
+
+    providedCompile "javax.servlet:javax.servlet-api:$servletApiVersion"
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.8.8'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.8'
+
+
+
+    /*Logging*/
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.21'
+
+
+
+    /*ActiveMQ*/
+    //compile("org.springframework.boot:spring-boot-starter-activemq")
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-core
+    compile group: 'org.apache.camel', name: 'camel-core', version: '2.19.0'
+    compile group: 'org.apache.camel', name: 'camel-spring', version: '2.19.0'
+    compile group: 'org.apache.camel', name: 'camel-jms', version: '2.19.0'
+    compile group: 'org.apache.activemq', name: 'activemq-camel', version: '5.14.5'
+    compile group: 'org.apache-extras.camel-extra', name: 'camel-jboss6', version: '2.15.0'
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-context
+    compile group: 'org.apache.camel', name: 'camel-context', version: '2.14.0'
+
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-spring-javaconfig
+    compile group: 'org.apache.camel', name: 'camel-spring-javaconfig', version: '2.18.4'
+
+
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-stream
+    compile group: 'org.apache.camel', name: 'camel-stream', version: '2.18.0'
+    // https://mvnrepository.com/artifact/org.apache.activemq/activemq-broker
+    compile group: 'org.apache.activemq', name: 'activemq-broker', version: '5.14.5'
+    // https://mvnrepository.com/artifact/org.apache.activemq/activemq-spring
+    compile group: 'org.apache.activemq', name: 'activemq-spring', version: '5.14.5'
+    // https://mvnrepository.com/artifact/org.apache.activemq/activemq-client
+    compile group: 'org.apache.activemq', name: 'activemq-client', version: '5.14.5'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-jms
+    compile group: 'org.springframework', name: 'spring-jms', version: '4.3.8.RELEASE'
+
+
+    // https://mvnrepository.com/artifact/org.apache.activemq/activemq-jaas
+    compile group: 'org.apache.activemq', name: 'activemq-jaas', version: '5.14.5'
+
+
 }
