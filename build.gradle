@@ -78,5 +78,5 @@ dependencies {
     // https://mvnrepository.com/artifact/org.apache.activemq/activemq-jaas
     compile group: 'org.apache.activemq', name: 'activemq-jaas', version: '5.14.5'
 
-
+    provided group: 'org.projectlombok', name: 'lombok', version: '1.16.8'
 }
