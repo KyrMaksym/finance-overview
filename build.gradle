@@ -87,7 +87,9 @@ dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.7.Final'
 
     // https://mvnrepository.com/artifact/org.projectlombok/lombok
-    provided group: 'org.projectlombok', name: 'lombok', version: '1.16.8'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.8'
+
+    compile fileTree(dir: 'libs', include: '*.jar')
 
 
 }
