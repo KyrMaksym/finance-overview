@@ -74,9 +74,20 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework/spring-jms
     compile group: 'org.springframework', name: 'spring-jms', version: '4.3.8.RELEASE'
 
-
     // https://mvnrepository.com/artifact/org.apache.activemq/activemq-jaas
     compile group: 'org.apache.activemq', name: 'activemq-jaas', version: '5.14.5'
 
+    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-web
+    compile group: 'org.springframework.security', name: 'spring-security-web', version: '4.2.3.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.springframework.security/spring-security-config
+    compile group: 'org.springframework.security', name: 'spring-security-config', version: '4.2.3.RELEASE'
+
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.7.Final'
+
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
     provided group: 'org.projectlombok', name: 'lombok', version: '1.16.8'
+
+
 }
