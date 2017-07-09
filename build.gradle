@@ -92,5 +92,5 @@ dependencies {
     // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
     compile group: 'com.zaxxer', name: 'HikariCP', version: '2.6.3'
 
-
+    compile fileTree(dir: 'libs', include: '*.jar')
 }
