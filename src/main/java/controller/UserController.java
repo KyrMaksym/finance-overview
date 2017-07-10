@@ -27,7 +27,7 @@ public class UserController {
         return userService.getUserById(id);
     }
 
-    @RequestMapping(name="{id}", method =RequestMethod.PATCH, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(name="{/id}", method =RequestMethod.PATCH, consumes = MediaType.APPLICATION_JSON_VALUE)
     UserDTO updateUser(@PathVariable Integer id, @RequestBody UserDTO userDTO){
         return userService.updateUser(id, userDTO);
     }
