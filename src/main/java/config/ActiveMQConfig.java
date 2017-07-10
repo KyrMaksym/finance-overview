@@ -76,6 +76,7 @@ public class ActiveMQConfig {
 
     @Bean
     public ConsumerTemplate createConsumerTemplate(CamelContext camelContext) {
+        System.out.println("createConsumerTemplate...........................................");
         ConsumerTemplate consumerTemplate = camelContext.createConsumerTemplate(consumerTemplateMaximumCacheSize);
         return consumerTemplate;
     }

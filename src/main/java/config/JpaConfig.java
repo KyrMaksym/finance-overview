@@ -20,8 +20,8 @@ import javax.sql.DataSource;
  */
 
 @Configuration
-@EnableJpaRepositories("repository")
-@ComponentScan({"service", "repository"})
+//@EnableJpaRepositories("repository")
+//@ComponentScan({"service", "repository"})
 @Import(TransactionConfig.class)
 @PropertySource("classpath:/application.properties")
 public class JpaConfig {
@@ -56,14 +56,6 @@ public class JpaConfig {
         dataSource.setURL(url);
         dataSource.setUser(user);
         dataSource.setPassword(password);
-        /*
-        ds.setDriverType("thin");
-        ds.setServerName("dssw2k01");
-        ds.setPortNumber(1521);
-        ds.setDatabaseName("orcl"); // sid
-        ds.setUser("scott");
-        ds.setPassword("tiger");
-        */
         return dataSource;
     }
 

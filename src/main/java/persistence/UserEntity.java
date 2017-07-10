@@ -17,7 +17,7 @@ public class UserEntity {
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="user_seq")
     @SequenceGenerator(
             initialValue = 1,
-            name="role_seq",
+            name="user_seq",
             sequenceName="user_seq",
             allocationSize=20
     )
