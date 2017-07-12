@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RoleDTO {
+public class RoleDTO implements InitDTO{
     Integer id;
     String name;
 }

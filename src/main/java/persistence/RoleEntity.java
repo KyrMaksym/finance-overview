@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "tb_role", schema = JpaConfig.SCHEMA)
-public class RoleEntity {
+public class RoleEntity implements InitEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="role_seq")
     @SequenceGenerator(
