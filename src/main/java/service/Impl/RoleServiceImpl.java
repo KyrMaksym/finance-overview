@@ -36,13 +36,6 @@ public class RoleServiceImpl extends  AbstractMapperService<RoleEntity, RoleDTO>
     @Override
     public RoleDTO getRoleById(Integer roleId) {
         return toDTO(roleRepository.findOne(roleId));
-        /*
-        RoleDTO roleDTO = new RoleDTO();
-        RoleEntity roleEntity = roleRepository.findOne(roleId);
-        roleDTO.setId(roleEntity.getId());
-        roleDTO.setName(roleEntity.getName());
-
-        return roleDTO;*/
     }
 
     @Override
@@ -52,11 +45,11 @@ public class RoleServiceImpl extends  AbstractMapperService<RoleEntity, RoleDTO>
 
     @Override
     protected Class getDTOClass() {
-        return null;
+        return RoleDTO.class;
     }
 
     @Override
     protected Class getEntityClass() {
-        return null;
+        return RoleEntity.class;
     }
 }
