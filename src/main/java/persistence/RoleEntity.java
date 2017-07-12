@@ -23,6 +23,9 @@ public class RoleEntity {
     @Column(name = "id")
     private Integer id;
 
+    @Column(name="name")
+    private String name;
+
     @OneToMany(mappedBy = "roleEntity")
     private List<UserEntity> userEntityList;
 
