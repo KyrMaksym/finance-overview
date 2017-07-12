@@ -33,11 +33,12 @@ public class AccountEntity {
     @Column(name = "ccy")
     private String ccy;
 
-    //user_id
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    CustomerEntity customerEntity;
 
-    //branch_id
-    @OneToOne
-    @JoinColumn(name="branch_id")
+    @ManyToOne
+    @JoinColumn(name = "branch_id")
     BranchEntity branchEntity;
 
 }
