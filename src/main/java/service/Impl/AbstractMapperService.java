@@ -6,15 +6,18 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.spi.MappingContext;
 import persistence.InitEntity;
 
+import javax.annotation.PostConstruct;
+
 /**
  * Created by BSyvuliak on 13.07.2017.
  */
 public abstract class AbstractMapperService<E extends InitEntity, DTO extends InitDTO> {
 
-    ModelMapper entityMapper = initiateModelMapper();
-    ModelMapper dtoMapper = initiateModelMapper();
+    private ModelMapper entityMapper = initiateModelMapper();
+    private ModelMapper dtoMapper = initiateModelMapper();
 
-    public void initMap(ModelMapper entityMapper, ModelMapper dtoMapper){
+    @PostConstruct
+    protected void initMap(ModelMapper entityMapper, ModelMapper dtoMapper){
 
         entityMapper.getConfiguration().setPropertyCondition(new Condition<E, DTO>() {
             @Override
