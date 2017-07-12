@@ -25,7 +25,7 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
     }
 
     protected String[] getServletMappings() {
-        return new String[]{/*"/finance/*"*/ "/"};
+        return new String[]{"/finance/*"};
     }
 
     @Override

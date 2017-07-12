@@ -1,7 +1,10 @@
 package service.Impl;
 
 import dto.UserDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import persistence.UserEntity;
+import repository.UserRepository;
 import service.UserService;
 
 import java.util.List;
@@ -11,6 +14,11 @@ import java.util.List;
  */
 @Service
 public class UserServiceImpl implements UserService {
+
+    @Autowired
+    UserRepository userRepository;
+
+
     @Override
     public UserDTO createUser(UserDTO userDTO) {
         return null;
@@ -28,7 +36,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO getUserById(Integer userId) {
-        return null;
+
+        UserDTO userDTO = new UserDTO();
+        UserEntity userEntity = userRepository.findOne(userId);
+        userDTO.setId(userEntity.getId());
+        userDTO.setLogin(userEntity.getLogin());
+        userDTO.setName(userEntity.getName());
+        userDTO.setRoleID(userEntity.getRoleEntity().getId());
+
+        return userDTO;
     }
 
     @Override

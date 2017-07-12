@@ -14,7 +14,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-//@ComponentScan({"config"})
+@ComponentScan({"controller"})
 @Import({CamelConfig.class})
 public class WebContextConfig extends WebMvcConfigurerAdapter {
 

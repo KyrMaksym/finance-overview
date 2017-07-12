@@ -20,7 +20,7 @@ import javax.sql.DataSource;
  */
 
 @Configuration
-//@EnableJpaRepositories("repository")
+@EnableJpaRepositories("repository")
 //@ComponentScan({"service", "repository"})
 @Import(TransactionConfig.class)
 @PropertySource("classpath:/application.properties")
