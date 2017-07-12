@@ -3,6 +3,7 @@ package persistence;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created by Vladimir on 09.07.2017.
@@ -24,4 +25,7 @@ public class BranchEntity {
 
     @Column(name="name")
     String name;
+
+    @OneToMany(mappedBy = "branchEntity")
+    Collection<AccountEntity> accountEntityCollection;
 }
