@@ -49,7 +49,6 @@ public class ActiveMQConfig {
 
     @Bean
     public JmsTransactionManager createJmsTransactionManager(ConnectionFactory connectionFactory) {
-        System.out.println("spring.activemq.broker-url="+brokerUrl);
         return new JmsTransactionManager(connectionFactory);
     }
 
@@ -57,7 +56,6 @@ public class ActiveMQConfig {
     public ActiveMQComponent createJmsComponent(ActiveMQConfiguration activeMQConfiguration) {
         ActiveMQComponent activeMQComponent = new ActiveMQComponent(activeMQConfiguration);
         activeMQComponent.setMaxConcurrentConsumers(jmsConcurrentConsumers);
-        System.out.println("ActiveMQComponent is created "+activeMQComponent.getVersion());
         return activeMQComponent;
     }
 
@@ -76,7 +74,6 @@ public class ActiveMQConfig {
 
     @Bean
     public ConsumerTemplate createConsumerTemplate(CamelContext camelContext) {
-        System.out.println("createConsumerTemplate...........................................");
         ConsumerTemplate consumerTemplate = camelContext.createConsumerTemplate(consumerTemplateMaximumCacheSize);
         return consumerTemplate;
     }
@@ -87,9 +84,6 @@ public class ActiveMQConfig {
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(brokerUrl);
         PooledConnectionFactory pooledConnectionFactory =new PooledConnectionFactory(activeMQConnectionFactory);
         pooledConnectionFactory.setMaxConnections(maxConnections);
-
-
-
         return pooledConnectionFactory;
     }
 
