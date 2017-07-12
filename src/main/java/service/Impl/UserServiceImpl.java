@@ -13,7 +13,7 @@ import java.util.List;
  * Created by BSyvuliak on 09.07.2017.
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends  AbstractMapperService implements UserService {
 
     @Autowired
     UserRepository userRepository;
@@ -49,6 +49,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserDTO> getAllUsersByName() {
+        return null;
+    }
+
+    @Override
+    protected Class getDTOClass() {
+        return null;
+    }
+
+    @Override
+    protected Class getEntityClass() {
         return null;
     }
 }

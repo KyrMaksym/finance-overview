@@ -92,5 +92,9 @@ dependencies {
     // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
     compile group: 'com.zaxxer', name: 'HikariCP', version: '2.6.3'
 
+    // https://mvnrepository.com/artifact/org.modelmapper/modelmapper
+    compile group: 'org.modelmapper', name: 'modelmapper', version: '1.0.0'
+
+
     compile fileTree(dir: 'libs', include: '*.jar')
 }

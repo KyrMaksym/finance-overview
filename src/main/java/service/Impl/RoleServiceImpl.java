@@ -13,7 +13,7 @@ import java.util.List;
  * Created by Vladimir on 12.07.2017.
  */
 @Service
-public class RoleServiceImpl implements RoleService {
+public class RoleServiceImpl extends  AbstractMapperService implements RoleService {
 
     @Autowired
     RoleRepository roleRepository;
@@ -45,6 +45,16 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public List<RoleDTO> getAllRoleByName() {
+        return null;
+    }
+
+    @Override
+    protected Class getDTOClass() {
+        return null;
+    }
+
+    @Override
+    protected Class getEntityClass() {
         return null;
     }
 }
