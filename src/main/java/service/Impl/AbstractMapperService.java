@@ -16,16 +16,22 @@ public abstract class AbstractMapperService<E extends InitEntity, DTO extends In
     private ModelMapper entityMapper = initiateModelMapper();
     private ModelMapper dtoMapper = initiateModelMapper();
 
-    @PostConstruct
-    protected void initMap(ModelMapper entityMapper, ModelMapper dtoMapper){
+    public AbstractMapperService() {
+    }
 
+    @PostConstruct
+    public void initMap() {
+        initConfig(entityMapper, dtoMapper);
+    }
+
+
+    protected void initConfig(ModelMapper entityMapper, ModelMapper dtoMapper) {
         entityMapper.getConfiguration().setPropertyCondition(new Condition<E, DTO>() {
             @Override
             public boolean applies(MappingContext<E, DTO> context) {
-                return context.getSource()!=null;
+                return context.getSource() != null;
             }
         });
-
     }
 
     public ModelMapper initiateModelMapper() {

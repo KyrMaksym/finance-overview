@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "tb_users", schema = JpaConfig.SCHEMA)
-public class UserEntity {
+public class UserEntity implements  InitEntity{
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="user_seq")
     @SequenceGenerator(
